@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Hero } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
@@ -10,7 +10,7 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
   styles: [
   ]
 })
-export class SearchPageComponent implements OnInit {
+export class SearchPageComponent {
 
   public searchInput = new FormControl('');
   public heroes: Hero[] = [];
@@ -37,21 +37,5 @@ export class SearchPageComponent implements OnInit {
     this.searchInput.setValue(hero.superhero);
     this.selectedHero = hero;
   }
-
-  // options: string[] = ['One', 'Two', 'Three'];
-  // filteredOptions: Observable<string[]>;
-
-  ngOnInit() {
-  //   this.filteredOptions = this.myControl.valueChanges.pipe(
-  //     startWith(''),
-  //     map(value => this._filter(value || '')),
-  //   );
-  }
-
-  // private _filter(value: string): string[] {
-  //   const filterValue = value.toLowerCase();
-
-  //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  // }
 
 }
