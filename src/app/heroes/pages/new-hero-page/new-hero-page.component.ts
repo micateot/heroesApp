@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { switchMap } from 'rxjs';
+import { filter, switchMap, tap } from 'rxjs';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -103,25 +103,33 @@ export class NewHeroPageComponent implements OnInit {
       data: this.heroForm.value,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
-      // console.log({result});
-
-      if(!result) return;
-
-      this.heroesService.deleteHero(this.currentHero.id).subscribe( created =>
-        {
-          console.log({created});
-          if(created) {
-            this.router.navigate(['/heroes']);
-            return;
-          }
-          this.showSnackBar('Error al eliminar héroe');
-          return;
-        }
+    dialogRef.afterClosed()
+      .pipe(
+        filter(result => result), // el filter permite decidir si se sigue el flujo de ejecucuión o se termina ahí basado en un valor
+          // (en este caso le permite seguir solo si el valor del resultado es positivo (true), si es false o undefined no continúa).
+        switchMap(() => this.heroesService.deleteHero(this.currentHero.id)),
+        filter(wasDeleted => wasDeleted)
       )
+      .subscribe(result => {
+        this.router.navigate(['/heroes'])
+      });
 
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   // console.log({result});
+    //   if(!result) return;
+
+    //   this.heroesService.deleteHero(this.currentHero.id).subscribe( created =>
+    //     {
+    //       console.log({created});
+    //       if(created) {
+    //         this.router.navigate(['/heroes']);
+    //         return;
+    //       }
+    //       this.showSnackBar('Error al eliminar héroe');
+    //       return;
+    //     }
+    //   )
+    // });
 
   }
 }

@@ -16,15 +16,6 @@
       "characters": "Bruce Wayne"
     },
     {
-      "id": "dc-superman",
-      "superhero": "Superman",
-      "publisher": "DC Comics",
-      "alter_ego": "Kal-El",
-      "first_appearance": "Action Comics #1",
-      "characters": "Kal-El",
-      "alt_img": "https://www.cinemascomics.com/wp-content/uploads/2021/06/Superman.jpg"
-    },
-    {
       "id": "dc-flash",
       "superhero": "Flash",
       "publisher": "DC Comics",
@@ -41,44 +32,12 @@
       "characters": "Alan Scott, Hal Jordan, Guy Gardner, John Stewart, Kyle Raynor, Jade, Sinestro, Simon Baz"
     },
     {
-      "id": "dc-arrow",
-      "superhero": "Green Arrow",
-      "publisher": "DC Comics",
-      "alter_ego": "Oliver Queen",
-      "first_appearance": "More Fun Comics #73",
-      "characters": "Oliver Queen"
-    },
-    {
       "id": "dc-wonder",
       "superhero": "Wonder Woman",
       "publisher": "DC Comics",
       "alter_ego": "Princess Diana",
       "first_appearance": "All Star Comics #8",
       "characters": "Princess Diana"
-    },
-    {
-      "id": "dc-martian",
-      "superhero": "Martian Manhunter",
-      "publisher": "DC Comics",
-      "alter_ego": "J\"onn J\"onzz",
-      "first_appearance": "Detective Comics #225",
-      "characters": "Martian Manhunter"
-    },
-    {
-      "id": "dc-robin",
-      "superhero": "Robin/Nightwing",
-      "publisher": "DC Comics",
-      "alter_ego": "Dick Grayson",
-      "first_appearance": "Detective Comics #38",
-      "characters": "Dick Grayson"
-    },
-    {
-      "id": "dc-blue",
-      "superhero": "Blue Beetle",
-      "publisher": "DC Comics",
-      "alter_ego": "Dan Garret",
-      "first_appearance": "Mystery Men Comics #1",
-      "characters": "Dan Garret, Ted Kord, Jaime Reyes"
     },
     {
       "id": "dc-black",
