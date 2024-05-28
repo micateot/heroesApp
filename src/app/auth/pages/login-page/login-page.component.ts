@@ -18,7 +18,7 @@ export class LoginPageComponent {
     this.authService.login('mica@gmail.com', '123456').subscribe(
       user => {
         console.log(user);
-        this.router.navigate(['/heroes/list'])
+        this.router.navigate(['/'])
       }
     )
   }
